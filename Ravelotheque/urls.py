@@ -16,8 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
+from backend import views
+
+router = routers.DefaultRouter()
+router.register(r'authors', views.AuthorAPI, 'author')
+router.register(r'editors', views.EditorAPI, 'editor')
+router.register(r'collections', views.CollectionAPI, 'collection')
+router.register(r'books', views.BookAPI, 'book')
 
 urlpatterns = [
+    path('', include('backend.urls')),
     path('admin/', admin.site.urls),
-    path('', include('backend.urls'))
+    path('api/', include(router.urls)),
 ]
