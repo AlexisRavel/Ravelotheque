@@ -5,6 +5,8 @@ Runs on Ubuntu Server 23.04.
 ### Tech and language
 - Python 3.11.4
 - Django 4.2.5
+- Node 18.13.0
+- React
 
 ### Packages use
 - Dotenv 1.0.0
