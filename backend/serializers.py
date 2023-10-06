@@ -12,11 +12,17 @@ class EditorSerializer(serializers.ModelSerializer):
         fields = ('name',)
 
 class CollectionSerializer(serializers.ModelSerializer):
+    editorName = serializers.CharField(source='editor.name')
+
     class Meta:
         model = Collection
-        fields = ('name', 'editor')
+        fields = ('name', 'editorName')
 
 class BookSerializer(serializers.ModelSerializer):
+    authorName = serializers.CharField(source='author.name')
+    editorName = serializers.CharField(source='editor.name')
+    collectionName = serializers.CharField(source='collection.name')
+
     class Meta:
         model = Book
-        fields = ('title', 'author', 'editor', 'collection', 'genre')
+        fields = ('title', 'authorName', 'editorName', 'collectionName', 'genre')

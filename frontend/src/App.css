@@ -22,4 +22,10 @@ body {
   transform: translateY(4px);
 }
 
+.book {
+  border-radius: 5px;
+  background-color: #2734e7;
+  margin: 0px 400px 0px 400px;
+}
+
 

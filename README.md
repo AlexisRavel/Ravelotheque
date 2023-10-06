@@ -12,6 +12,8 @@ Runs on Ubuntu Server 23.04.
 - Dotenv 1.0.0
 - DjangoRestFramework 3.14.0
 - DjangoCorsHeader 4.2.0
+- Axios 
+- React-Router-Dom 6.16.0
 
 ## !! FOR THE SECRET KEY 
 ### What is it
