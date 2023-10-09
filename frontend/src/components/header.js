@@ -13,8 +13,8 @@ class Header extends React.Component {
                 </div>
                 <div className="buttons">
                     <button onClick={() => this.onMenuButton('authors')}>Authors</button>
-                    <button>Editors</button>
-                    <button>Collections</button>
+                    <button onClick={() => this.onMenuButton('editors')}>Editors</button>
+                    <button onClick={() => this.onMenuButton('collections')}>Collections</button>
                     <button onClick={() => this.onMenuButton('books')}>Books</button>
                 </div>            
             </div>

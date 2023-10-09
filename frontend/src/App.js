@@ -3,8 +3,8 @@ import React from "react";
 import './App.css';
 import Header from './components/header';
 import Authors from "./components/authors";
-
-
+import Editors from "./components/editors";
+import Collections from "./components/collections"
 import Books from "./components/books";
 
 class App extends React.Component {
@@ -22,6 +22,20 @@ class App extends React.Component {
           <div className="App">
             <Header changePage={(aff) => this.setState({page: aff})}></Header>
             <Authors></Authors>
+          </div>
+        );
+      case 'editors':
+        return(
+          <div className="App">
+            <Header changePage={(aff) => this.setState({page: aff})}></Header>
+            <Editors></Editors>
+          </div>
+        );
+      case 'collections':
+        return(
+          <div className="App">
+            <Header changePage={(aff) => this.setState({page: aff})}></Header>
+            <Collections></Collections>
           </div>
         );
       case 'index':

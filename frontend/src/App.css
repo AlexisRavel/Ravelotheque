@@ -1,31 +1,33 @@
 body {
-  background-color: #010105;
+  background-color: #f5fcfe;
 }
 
 .App {
   text-align: center;
-  color: #dadcfb;
+  color: #02151d;
 }
 
 .App button {
-  color: #010105;
-  background-color: #7e86f1;
+  color: #02151d;
+  background-color: #0a8ec2;
   border: none;
   border-radius: 5px;
+  padding: 4px;
+  margin: 0px 2px 0px 2px;
 }
 
 .App button:hover {
-  background-color: #2734e7;
+  background-color: #9ee0fa;
 }
 
 .App button:active {
   transform: translateY(4px);
 }
 
-.book {
+.author, .book, .editor, .collection {
   border-radius: 5px;
-  background-color: #2734e7;
-  margin: 0px 400px 0px 400px;
+  background-color: #9ee0fa;
+  margin: 0px 800px 0px 800px;
 }
 
 
