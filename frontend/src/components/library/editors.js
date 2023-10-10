@@ -9,16 +9,12 @@ class Editors extends React.Component {
         }
     }
 
-    async searchEditor() {
+    componentDidMount() {
         axios.get("/api/editors")
         .then(res => this.setState({editors: res.data}))
-        .catch(function (error) {
-            console.log(error.toJSON());
-        });
     }
 
     render() {
-        this.searchEditor();
         if(this.state.editors != null) {
             return (
                 <div className="editors">

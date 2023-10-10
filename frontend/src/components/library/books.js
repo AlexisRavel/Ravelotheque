@@ -9,16 +9,12 @@ class Books extends React.Component {
         }
     }
 
-    async searchBook() {
+    componentDidMount() {
         axios.get("/api/books")
         .then(res => this.setState({books: res.data}))
-        .catch(function (error) {
-            console.log(error.toJSON());
-        });
     }
 
     render() {
-        this.searchBook();
         if(this.state.books != null) {
             return (
                 <div className="books">

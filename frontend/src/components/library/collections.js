@@ -9,16 +9,12 @@ class Collections extends React.Component {
         }
     }
 
-    async searchCollection() {
+    componentDidMount() {
         axios.get("/api/collections")
         .then(res => this.setState({collections: res.data}))
-        .catch(function (error) {
-            console.log(error.toJSON());
-        });
     }
 
     render() {
-        this.searchCollection();
         if(this.state.collections != null) {
             return (
                 <div className="collections">

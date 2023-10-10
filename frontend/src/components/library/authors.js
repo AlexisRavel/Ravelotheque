@@ -9,16 +9,12 @@ class Authors extends React.Component {
         }
     }
 
-    async searchAuthor() {
+    componentDidMount() {
         axios.get("/api/authors")
         .then(res => this.setState({authors: res.data}))
-        .catch(function (error) {
-            console.log(error.toJSON());
-        });
     }
 
     render() {
-        this.searchAuthor();
         if(this.state.authors != null) {
             return (
                 <div className="authors">

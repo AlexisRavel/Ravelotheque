@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component {
     onMenuButton(aff) {
@@ -9,7 +10,8 @@ class Header extends React.Component {
         return(
             <div className="header">
                 <div>
-                    <h1>Ravelothèque</h1>
+                    <h2>Library</h2>
+                    <Link to="/">Bookshelf</Link>
                 </div>
                 <div className="buttons">
                     <button onClick={() => this.onMenuButton('authors')}>Authors</button>

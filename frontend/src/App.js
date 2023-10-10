@@ -1,53 +1,28 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import './App.css';
-import Header from './components/header';
-import Authors from "./components/authors";
-import Editors from "./components/editors";
-import Collections from "./components/collections"
-import Books from "./components/books";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+import Library from "./components/library/library";
+const Bookshelf = React.lazy(() => import("./components/bookshelf/bookshelf"));
+
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: "index",
-    }
-  }
 
   render() {
-    switch (this.state.page) {
-      case 'authors':
-        return(
-          <div className="App">
-            <Header changePage={(aff) => this.setState({page: aff})}></Header>
-            <Authors></Authors>
-          </div>
-        );
-      case 'editors':
-        return(
-          <div className="App">
-            <Header changePage={(aff) => this.setState({page: aff})}></Header>
-            <Editors></Editors>
-          </div>
-        );
-      case 'collections':
-        return(
-          <div className="App">
-            <Header changePage={(aff) => this.setState({page: aff})}></Header>
-            <Collections></Collections>
-          </div>
-        );
-      case 'index':
-      case 'books':
-      default:
-        return(
-          <div className="App">
-            <Header changePage={(aff) => this.setState({page: aff})}></Header>
-            <Books></Books>
-          </div>
-        );
-    }
+    return (
+      <div className="App">
+        <h1>Ravelothèque</h1>
+        <Router>
+          <Suspense fallback={<div>Welcome to the Ravelothèque</div>}>
+            <Routes>
+              <Route index element={<Bookshelf/>}></Route>
+              <Route path='/library' element={<Library/>}></Route>
+            </Routes>
+          </Suspense>
+        </Router>
+      </div>
+    )
   }
 }
 
