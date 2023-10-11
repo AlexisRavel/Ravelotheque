@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Library from "./components/library/library";
 const Bookshelf = React.lazy(() => import("./components/bookshelf/bookshelf"));
+const BookForm = React.lazy(() => import("./components/form/bookForm"))
 
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Routes>
               <Route index element={<Bookshelf/>}></Route>
               <Route path='/library' element={<Library/>}></Route>
+              <Route path='/library/newBook' element={<BookForm/>}></Route>
             </Routes>
           </Suspense>
         </Router>

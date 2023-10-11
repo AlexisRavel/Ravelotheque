@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class BookForm extends React.Component {
     constructor(props) {
@@ -65,7 +66,7 @@ class BookForm extends React.Component {
                     <label>
                         Tile: 
                         <input type="text" value={this.state.title} onChange={this.onTitleChange} required></input>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         Author: 
@@ -77,7 +78,7 @@ class BookForm extends React.Component {
                                 ))
                             }
                         </select>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         Editor: 
@@ -89,7 +90,7 @@ class BookForm extends React.Component {
                                 ))
                             }
                         </select>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         Collection: 
@@ -101,15 +102,16 @@ class BookForm extends React.Component {
                                 ))
                             }
                         </select>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         Genre: 
                         <input type="text" value={this.state.genre} onChange={this.onGenreChange}></input>
-                    </label>
+                    </label><br></br>
 
                     <input type="submit" value="Add"></input>
                 </form>
+                <Link to='/library'>Cancel</Link>
             </div>
         )
     }
