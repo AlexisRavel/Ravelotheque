@@ -42,11 +42,12 @@ class BookForm extends React.Component {
         this.setState({genre: event.target.value})
     }
 
-    verifyInfos=() => {
+    addBook=() => {
         if(this.state.title.length > 40 || this.state.title.length === "") {
             alert("The title must not be empty or exceed 40 characters");
             return 1;
         }
+
         let data = {
             "title": this.state.title,
             "authorName": this.state.author,
@@ -55,14 +56,14 @@ class BookForm extends React.Component {
             "genre": this.state.genre,
         }
 
-        axios.post("/api/books", data)
+        axios.post("/api/books/", data)
     }
 
     render() {
         return (
             <div className="form">
                 <h3>Add book:</h3>
-                <form onSubmit={this.verifyInfos}>
+                <form onSubmit={this.addBook}>
                     <label>
                         Tile: 
                         <input type="text" value={this.state.title} onChange={this.onTitleChange} required></input>
